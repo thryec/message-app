@@ -35,7 +35,7 @@ export const ConnectButton = () => {
     <Button
       onClick={() => connect({ connector: injected() })}
       isLoading={isPending}
-      size="md"
+      className="bg-black text-white"
     >
       Connect Wallet
     </Button>

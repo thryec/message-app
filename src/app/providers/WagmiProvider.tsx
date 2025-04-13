@@ -8,22 +8,34 @@ import { WagmiProvider as WagmiCoreProvider } from "wagmi";
 import { injected, metaMask, walletConnect } from "wagmi/connectors";
 
 // Create wagmi config for v2
+
+const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID;
+if (!projectId) {
+  console.warn("WalletConnect ProjectId not set in environment variables");
+}
+
 const config = createConfig({
   chains: [mainnet, polygon, optimism],
   transports: {
-    [mainnet.id]: http(),
-    [polygon.id]: http(),
-    [optimism.id]: http(),
+    [mainnet.id]: http(
+      "https://eth-mainnet.g.alchemy.com/v2/NEXT_PUBLIC_ALCHEMY_API_KEY"
+    ),
+    [polygon.id]: http(
+      "https://polygon-mainnet.g.alchemy.com/v2/NEXT_PUBLIC_ALCHEMY_API_KEY"
+    ),
+    [optimism.id]: http(
+      "https://opt-mainnet.g.alchemy.com/v2/NEXT_PUBLIC_ALCHEMY_API_KEY"
+    ),
   },
   connectors: [
     injected(),
     metaMask(),
     walletConnect({
-      projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "",
+      projectId: projectId || "",
       metadata: {
         name: "DeFi Messenger",
         description: "Decentralized encrypted messaging app",
-        url: "https://defi-messenger.app",
+        url: "http://localhost:3000",
         icons: ["https://defi-messenger.app/icon.png"],
       },
     }),
@@ -43,7 +55,7 @@ export function WagmiProvider({ children }: WagmiProviderProps) {
   // To avoid hydration mismatch, only render after mounting on client
   useEffect(() => {
     setMounted(true);
-  }, []);
+  }, [mounted]);
 
   if (!mounted) {
     return null;

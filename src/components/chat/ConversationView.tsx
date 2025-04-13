@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import { useXmtp } from "../../hooks/useXmtp";
-import { useConversations } from "@/hooks/useConversation";
+import { useConversations } from "@/hooks/useConversations";
 import { useMessages } from "@/hooks/useMessage";
 import { useProfile } from "../../hooks/useProfile";
 import { ChatHeader } from "./ChatHeader";

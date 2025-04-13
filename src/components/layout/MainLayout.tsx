@@ -1,8 +1,8 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import { useAccount } from "wagmi";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { Sidebar } from "./Sidebar";
 import { TopBar } from "./TopBar";
 import { ConnectButton } from "../auth/ConnectButton";
@@ -17,14 +17,16 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
   const { isInitialized, initClient } = useXmtp();
   const router = useRouter();
 
-  // If not on home page and not connected, redirect to home
-  if (!isConnected && router.pathname !== "/") {
-    router.push("/");
-    return null;
-  }
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (!isConnected && pathname !== "/") {
+      router.push("/");
+    }
+  }, [isConnected, pathname]);
 
   // If connected but XMTP not initialized
-  if (isConnected && !isInitialized && router.pathname !== "/") {
+  if (isConnected && !isInitialized && pathname !== "/") {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
         <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow">

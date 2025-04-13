@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useAccount } from "wagmi";
-import { useConversations } from "@/hooks/useConversation";
+import { useConversations } from "@/hooks/useConversations";
 import { useProfile } from "../../hooks/useProfile";
 import { Avatar } from "../ui/Avatar";
 import { formatRelativeTime } from "../../lib/utils";

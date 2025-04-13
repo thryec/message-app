@@ -1,7 +1,29 @@
-## To-Dos
+# Web3 Messenger
 
+A decentralized encrypted messaging application that allows users to communicate securely using their Ethereum wallet addresses. Built with Next.js, TypeScript, viem, and XMTP. 
 
-## Setup Instructions
+## 🚀 Features
+
+- **Wallet-Based Authentication**: Connect with any Ethereum wallet
+- **End-to-End Encryption**: Secure messaging using XMTP protocol
+- **Decentralized**: Messages are stored on the decentralized XMTP network
+- **Signal-like UI/UX**: Familiar, clean, and user-friendly interface
+- **Profile Management**: Create and manage your profile information
+- **Conversations**: Start direct conversations with any Ethereum address
+
+## 💻 Tech Stack
+
+- **Frontend**: Next.js 15 with App Router and TypeScript
+- **Styling**: Tailwind CSS v4
+- **Blockchain Interaction**: viem and wagmi
+- **Messaging Protocol**: XMTP
+- **Authentication**: Ethereum wallet-based (MetaMask, WalletConnect, etc.)
+
+## 📷 Screenshots
+
+(Screenshots will be added after initial implementation)
+
+## 🛠️ Installation
 
 1. Clone the repository
    ```bash
@@ -25,56 +47,54 @@
    npm run dev
    ```
 
-## Project Structure
+## 📚 Usage
 
-- **src/app**: Next.js app router pages and layouts
-- **src/components**: Reusable React components
-  - **auth**: Authentication-related components
-  - **chat**: Chat and messaging components
-  - **layout**: Layout components (sidebar, header, etc.)
-  - **ui**: Base UI components (buttons, inputs, etc.)
-- **src/hooks**: Custom React hooks
-- **src/lib**: Utility functions and shared code
-- **src/types**: TypeScript type definitions
-- **public**: Static assets
+1. **Connect Wallet**: Click the "Connect Wallet" button to connect your Ethereum wallet.
+2. **Initialize XMTP**: After connecting, initialize your XMTP client with a one-time signature.
+3. **Start Chatting**: Enter an Ethereum address to start a new conversation.
+4. **Manage Profile**: Update your display name and bio from the profile page.
 
-## Key Features
+## 🔒 Privacy & Security Features
 
-1. **Authentication**: Connect with Ethereum wallet (MetaMask, WalletConnect, etc.)
-2. **Messaging**: End-to-end encrypted messaging using XMTP protocol
-3. **Profiles**: Simple profile creation and management
-4. **Conversations**: Start new conversations with any Ethereum address
+- **End-to-End Encryption**: All messages are encrypted using XMTP's secure protocol
+- **No Phone Number Required**: Use your Ethereum address as your identity
+- **Decentralized Storage**: Messages are stored on the decentralized XMTP network
+- **Open Source**: All code is open for review and verification
 
-## Architecture Overview
+## 🗺️ Roadmap
 
-```
-User Interface (Next.js)
-       ↑ ↓
-React Components/Hooks
-       ↑ ↓
-XMTP Client <---> XMTP Network
-       ↑
-Wallet Connection (viem/wagmi)
-```
+### MVP (Current)
+- Basic wallet connection and XMTP integration
+- 1-to-1 encrypted messaging
+- Simple profile management
+- Web application with responsive design
 
-- User connects wallet using viem/wagmi
-- XMTP client initializes using the connected wallet
-- All messages are end-to-end encrypted via XMTP
-- UI built with React components following Signal's design patterns
+### Future Enhancements
+- **Enhanced Privacy**: Additional metadata protection layers
+- **Decentralized Identity**: Integration with zkDID solutions
+- **Crypto Transfers**: Send cryptocurrency within conversations
+- **Group Messaging**: Create and manage group conversations
+- **Mobile Apps**: Native mobile applications
+- **Advanced Storage**: Fully decentralized profile storage with IPFS/Ceramic
 
-## Development Workflow
+## 🤝 Contributing
 
-1. Connect wallet (required before messaging)
-2. Initialize XMTP client (requires a signature)
-3. View existing conversations or start new ones
-4. Send/receive encrypted messages
-5. Update profile information
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## Future Enhancements
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-- Implement fully decentralized profile storage with IPFS
-- Add group chat functionality
-- Integrate crypto transfer capabilities
-- Implement zkDID for verifiable identity
-- Enhanced metadata protection
-- Mobile app development
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgements
+
+- [XMTP](https://xmtp.org/) for the messaging protocol
+- [Next.js](https://nextjs.org/) for the frontend framework
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- [viem](https://viem.sh/) and [wagmi](https://wagmi.sh/) for Ethereum interaction
+- [Signal](https://signal.org/) for UI/UX inspiration
