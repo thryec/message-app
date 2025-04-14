@@ -1,4 +1,6 @@
-import { useRouter } from "next/router";
+"use client";
+
+import { useRouter } from "next/navigation";
 import { useAccount } from "wagmi";
 import { useConversations } from "@/hooks/useConversations";
 import { useProfile } from "../../hooks/useProfile";

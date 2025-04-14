@@ -61,6 +61,14 @@ A decentralized encrypted messaging application that allows users to communicate
 - **Decentralized Storage**: Messages are stored on the decentralized XMTP network
 - **Open Source**: All code is open for review and verification
 
+## To-dos
+- [ ] Add support for multiple wallets
+- [ ] ENS directory integration 
+- [ ] Integrate with zkDID solution 
+- [ ] Integrate metadata storage solution 
+- [ ] Group Messaging 
+- [ ] p2p payments 
+
 ## 🗺️ Roadmap
 
 ### MVP (Current)

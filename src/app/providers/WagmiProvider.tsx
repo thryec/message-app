@@ -30,15 +30,16 @@ const config = createConfig({
   connectors: [
     injected(),
     metaMask(),
-    walletConnect({
-      projectId: projectId || "",
-      metadata: {
-        name: "DeFi Messenger",
-        description: "Decentralized encrypted messaging app",
-        url: "http://localhost:3000",
-        icons: ["https://defi-messenger.app/icon.png"],
-      },
-    }),
+    // walletConnect({
+    //   projectId: projectId || "",
+    //   metadata: {
+    //     name: "DeFi Messenger",
+    //     description: "Decentralized encrypted messaging app",
+    //     url: "http://localhost:3000",
+    //     icons: ["https://defi-messenger.app/icon.png"],
+    //   },
+    //   showQrModal: true,
+    // }),
   ],
 });
 

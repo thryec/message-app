@@ -57,7 +57,7 @@ export default function Home() {
             <div className="flex justify-center">
               <div className="flex items-center justify-center space-x-2">
                 <div className="w-5 h-5 border-2 border-t-primary rounded-full animate-spin"></div>
-                <span>Loading...</span>
+                <span>Pending wallet connection confirmation...</span>
               </div>
             </div>
           )}
