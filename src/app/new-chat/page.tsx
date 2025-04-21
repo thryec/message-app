@@ -100,6 +100,7 @@ export default function NewChatPage() {
 
               <Button
                 type="submit"
+                variant="primary"
                 isLoading={isLoading}
                 disabled={!address.trim() || isLoading}
                 fullWidth

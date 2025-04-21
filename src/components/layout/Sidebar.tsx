@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import { useAccount } from "wagmi";
 import { useConversations } from "@/hooks/useConversations";
 import { useProfile } from "../../hooks/useProfile";
@@ -9,10 +9,13 @@ import { formatRelativeTime } from "../../lib/utils";
 
 export const Sidebar = () => {
   const router = useRouter();
+  const params = useParams();
   const { address } = useAccount();
   const { conversations, isLoading: isLoadingConversations } =
     useConversations();
   const { getProfile, profiles } = useProfile();
+
+  const addressFromPath = params.address;
 
   const navigateToChat = (peerAddress: string) => {
     router.push(`/chat/${peerAddress}`);
@@ -74,7 +77,7 @@ export const Sidebar = () => {
                   <li
                     key={peerAddress}
                     className={`px-4 py-3 cursor-pointer hover:bg-gray-100 ${
-                      router.query.address === peerAddress ? "bg-gray-100" : ""
+                      addressFromPath === peerAddress ? "bg-gray-100" : ""
                     }`}
                     onClick={() => navigateToChat(peerAddress)}
                   >

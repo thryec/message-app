@@ -23,11 +23,11 @@ export const Button = ({
 
   const variantClasses = {
     primary:
-      "bg-primary text-white hover:bg-primary-dark disabled:bg-primary-light",
+      "bg-primary bg-black text-white hover:bg-primary-dark disabled:bg-primary-light hover:cursor-pointer",
     secondary:
-      "bg-gray-100 text-gray-800 hover:bg-gray-200 disabled:bg-gray-50 disabled:text-gray-400",
+      "bg-gray-100 text-gray-800 hover:bg-gray-200 disabled:bg-gray-50 disabled:text-gray-400 hover:cursor-pointer",
     outline:
-      "bg-white text-gray-800 border border-gray-300 hover:bg-gray-50 disabled:text-gray-400",
+      "bg-white text-gray-800 border border-gray-300 hover:bg-gray-50 disabled:text-gray-400 hover:cursor-pointer",
   };
 
   const sizeClasses = {

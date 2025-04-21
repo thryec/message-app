@@ -6,6 +6,7 @@ import { MainLayout } from "@/components/layout/MainLayout";
 import { useAccount } from "wagmi";
 import { useXmtp } from "../providers/XmtpProvider";
 import { useConversations } from "@/hooks/useConversations";
+import { Button } from "@/components/ui/Button";
 
 export default function ChatPage() {
   const { isConnected } = useAccount();
@@ -37,12 +38,12 @@ export default function ChatPage() {
             <p className="text-gray-600 mb-6">
               Start a conversation by entering an Ethereum address
             </p>
-            <button
+            <Button
               onClick={() => router.push("/new-chat")}
               className="px-4 py-2 font-medium text-white bg-primary rounded-md hover:bg-primary-dark"
             >
               Start a conversation
-            </button>
+            </Button>
           </div>
         ) : (
           <div className="text-center max-w-md p-8 bg-white rounded-lg shadow">

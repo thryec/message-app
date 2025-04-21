@@ -38,7 +38,7 @@ export default function Home() {
               <div className="flex justify-center">
                 <button
                   onClick={() => initClient()}
-                  className="px-4 py-2 font-medium text-white bg-primary rounded-md hover:bg-primary-dark"
+                  className="px-4 py-2 bg-black font-medium text-white bg-primary rounded-md hover:bg-primary-dark hover:cursor-pointer"
                 >
                   Initialize XMTP
                 </button>
